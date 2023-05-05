@@ -1,14 +1,37 @@
 import './App.css';
-import General from './components/General';
-import GeneralButton from './components/GeneralButton';
+import React, { Component } from 'react';
+import Forms from './components/Forms';
+import Preview from './components/Preview';
 
-function App() {
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      formValues: {
+        name: '',
+        email: '',
+        surname: '',
+      },
+    };
+  }
+
+  handleFormChange = (name, value) => {
+    this.setState((prevState) => ({
+      formValues: {
+        ...prevState.formValues,
+        [name]: value,
+      },
+    }));
+  };
+
+  render() {
   return (
     <div className="App">
-      <General></General>
-        
+      <Forms></Forms>
+      <Preview formValues={this.state.formValues}></Preview>
     </div>
   );
 }
-
+}
 export default App;
