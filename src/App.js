@@ -25,25 +25,39 @@ class App extends Component {
   }
 
   handleChange = (e) =>{
-    let field = e.target.name
-    let formPart = e.target.parentNode.parentNode.className;
-    // console.log(field);
-    // console.log(formPart)
+    // let field = e.target.name
+    // let formPart = e.target.parentNode.parentNode.className;
+    // // console.log(field);
+    // // console.log(formPart)
    
-    this.setState(prevSate =>({
-      [formPart]: {
-        ...prevSate[formPart],
-        [field]: e.target.value,
-      }
-    }))
-    
+    // this.setState(prevSate =>({
+    //   [formPart]: {
+    //     ...prevSate[formPart],
+    //     [field]: e.target.value,
+    //   }
+    // }))
     
   }
   onSub = (e) =>{
     e.preventDefault();
+    let inputs = e.target.parentElement.querySelectorAll('input');
+    let formPart = e.target.parentNode.className;
+    let formData = [...inputs].reduce((acc, input) => {
+      acc[input.name] = input.value;
+      return acc;
+    }, {});
+    console.log(formPart)
+    // console.log(inputs[0].name)
+    // console.log(data)
+      this.setState(prevSate =>({
+      [formPart]: {
+        ...prevSate[formPart],
+        ...formData
+      }
 
+    }))
   }
-  render() {
+  render(){
     const {name, surname, email} = this.state.general
     const {school, degree, finishDate, startDate} = this.state.education
   return (
