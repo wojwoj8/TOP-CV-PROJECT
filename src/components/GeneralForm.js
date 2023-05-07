@@ -6,8 +6,10 @@ class GeneralForm extends Component{
         const {name, surname, email} = this.props
         return(
             
-            <div>
-                <form>
+            <div className="general">
+                <h2>General</h2>
+                <form className="general-form"
+                onSubmit={this.props.onSub}>
                     <label htmlFor="name">Name: </label>
                     <input name="name"
                     value={name}
@@ -22,7 +24,9 @@ class GeneralForm extends Component{
                     <input name="email"
                     value={email}
                     onChange={this.props.handleChange}
+                    type="email"
                     ></input>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         )
