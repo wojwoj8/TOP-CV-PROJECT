@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import GeneralForm from "./GeneralForm";
 import EducationForm from './EducationForm';
+import PracticalForm from "./PracticalForm";
 
 class Forms extends Component{
    
@@ -18,8 +19,12 @@ class Forms extends Component{
                 onSub={this.props.onSub}
                 education={this.props.education}
                 handleChange={this.props.handleChange}>
-
                 </EducationForm>
+                <PracticalForm
+                onSub={this.props.onSub}
+                education={this.props.practical}
+                handleChange={this.props.handleChange}>
+                </PracticalForm>
             </div>
         )
         

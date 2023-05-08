@@ -4,7 +4,8 @@ class Preview extends Component{
 
     
     render(){
-        const {name, surname, email, school, startDate, finishDate, degree} = this.props
+        const {name, surname, email, school, startDate, finishDate, degree, 
+            companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.props
         return(
         <div className="preview">
             <h2>Preview</h2>
@@ -34,6 +35,24 @@ class Preview extends Component{
                     Finish date: {finishDate}
                 </p>
             </div>
+            <div className="preview-practical">
+                <h3>Practical Experience</h3>
+                <p>
+                    Company: {companyName}
+                </p>
+                <p>
+                    Position: {positionTitle}
+                </p>
+                <p>
+                    Start date: {startDateP}
+                </p>
+                <p>
+                    Finish date: {finishDateP}
+                </p>
+                <p>
+                    Main tasks: {mainTasks}
+                </p>
+                </div>
          </div> 
         )
        
