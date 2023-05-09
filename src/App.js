@@ -1,6 +1,7 @@
 import './App.css';
 import './components/Forms.scss';
 import './components/Preview.scss'
+import uniqid from "uniqid";
 import React, { Component } from 'react';
 import Forms from './components/Forms';
 import Preview from './components/Preview';
@@ -21,6 +22,7 @@ class App extends Component {
         degree: '',
         startDate: '',
         finishDate: '',
+        id: uniqid(),
       },
       practical: {
         companyName: '',
@@ -28,7 +30,11 @@ class App extends Component {
         startDateP: '',
         finishDateP: '',
         mainTasks: '',
-      }
+        id: uniqid(),
+      },
+      educations: [],
+      practicals: []
+
     }
   }
 
@@ -49,8 +55,16 @@ class App extends Component {
   showHide = (e) =>{
     const butt = e.target;
     let form = butt.nextElementSibling;
-    form.classList.toggle('hidden')
+    form.classList.toggle('hidden');
 }
+  showHidePrev = (e) =>{
+    const butt = e.target;
+    let form = butt.nextElementSibling;
+    const forms = document.querySelector('.forms-side');
+    forms.classList.toggle('hidden');
+    form.classList.toggle('hidden');
+  }
+
   onSub = (e) =>{
     e.preventDefault();
     // need to make array in order to concat
@@ -63,9 +77,11 @@ class App extends Component {
       acc[input.name] = input.value;
       return acc;
     }, {});
-    // console.log(formPart)
-    // console.log(inputs[0].name)
-    // console.log(data)
+    // if (formPart === 'education'){
+    //   formData.id = this.state.education.id;
+    // }
+    // console.log(formData)
+
       this.setState(prevSate =>({
       [formPart]: {
         ...prevSate[formPart],
@@ -102,7 +118,7 @@ class App extends Component {
         startDateP={startDateP}
         finishDateP={finishDateP}
         mainTasks={mainTasks}
-        showHide={this.showHide}
+        showHidePrev={this.showHidePrev}
       ></Preview>
     </div>
   );

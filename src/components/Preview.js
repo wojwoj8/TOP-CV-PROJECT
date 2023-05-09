@@ -9,16 +9,13 @@ class Preview extends Component{
         return(
         <div className="preview">
             <button
-                onClick={this.props.showHide}
+                onClick={this.props.showHidePrev}
                 className="sh-butt-prev">Preview</button>
             <div className="preview-content hidden">
                 <div className="preview-general">
-                    <h3>General</h3>
-                    <p>
-                    Name: {name}</p>
-                    <p>
-                    Surname: {surname}
-                    </p>
+                    <h2>
+                    {name} {surname}</h2>
+
                     <p>
                     Email: {email}
                     </p>
