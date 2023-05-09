@@ -46,6 +46,11 @@ class App extends Component {
     // }))
     
   }
+  showHide = (e) =>{
+    const butt = e.target;
+    let form = butt.nextElementSibling;
+    form.classList.toggle('hidden')
+}
   onSub = (e) =>{
     e.preventDefault();
     // need to make array in order to concat
@@ -68,6 +73,7 @@ class App extends Component {
       }
 
     }))
+    
   }
   render(){
     const {name, surname, email} = this.state.general
@@ -81,6 +87,7 @@ class App extends Component {
         education = {this.state.education}
         practical = {this.state.practical}
         onSub={this.onSub}
+        showHide={this.showHide}
       ></Forms>
       <Preview 
         name={name}
@@ -95,6 +102,7 @@ class App extends Component {
         startDateP={startDateP}
         finishDateP={finishDateP}
         mainTasks={mainTasks}
+        showHide={this.showHide}
       ></Preview>
     </div>
   );

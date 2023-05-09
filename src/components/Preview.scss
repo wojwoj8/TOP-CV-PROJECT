@@ -1,8 +1,21 @@
-.preview{
-    display: flex;
+.flex-prop{
+    display:flex;
+    width:100%;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: grey;
+    // justify-content: center;
+    align-items: center; 
+    // border: 2px solid red;
+
 }
+.preview{
+    
+    @extend .flex-prop;
+    background-color: grey;
+
+    p{
+        margin:2px 0;
+    }
+   
+}
+
 // , .preview-general, .preview-education, .preview-practical

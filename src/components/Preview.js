@@ -8,50 +8,54 @@ class Preview extends Component{
             companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.props
         return(
         <div className="preview">
-            <h2>Preview</h2>
-            <div className="preview-general">
-                <h3>General</h3>
-                <p>
-                Name: {name}</p>
-                <p>
-                Surname: {surname}
-                </p>
-                <p>
-                Email: {email}
-                </p>
-            </div>
-            <div className="preview-education">
-                <h3>Education</h3>
-                <p>
-                    School: {school}
-                </p>
-                <p>
-                    Degree: {degree}
-                </p>
-                <p>
-                    Start date: {startDate}
-                </p>
-                <p>
-                    Finish date: {finishDate}
-                </p>
-            </div>
-            <div className="preview-practical">
-                <h3>Practical Experience</h3>
-                <p>
-                    Company: {companyName}
-                </p>
-                <p>
-                    Position: {positionTitle}
-                </p>
-                <p>
-                    Start date: {startDateP}
-                </p>
-                <p>
-                    Finish date: {finishDateP}
-                </p>
-                <p>
-                    Main tasks: {mainTasks}
-                </p>
+            <button
+                onClick={this.props.showHide}
+                className="sh-butt-prev">Preview</button>
+            <div className="preview-content hidden">
+                <div className="preview-general">
+                    <h3>General</h3>
+                    <p>
+                    Name: {name}</p>
+                    <p>
+                    Surname: {surname}
+                    </p>
+                    <p>
+                    Email: {email}
+                    </p>
+                </div>
+                <div className="preview-education">
+                    <h3>Education</h3>
+                    <p>
+                        School: {school}
+                    </p>
+                    <p>
+                        Degree: {degree}
+                    </p>
+                    <p>
+                        Start date: {startDate}
+                    </p>
+                    <p>
+                        Finish date: {finishDate}
+                    </p>
+                </div>
+                <div className="preview-practical">
+                    <h3>Practical Experience</h3>
+                    <p>
+                        Company: {companyName}
+                    </p>
+                    <p>
+                        Position: {positionTitle}
+                    </p>
+                    <p>
+                        Start date: {startDateP}
+                    </p>
+                    <p>
+                        Finish date: {finishDateP}
+                    </p>
+                    <p>
+                        Main tasks: {mainTasks}
+                    </p>
+                    </div>
                 </div>
          </div> 
         )

@@ -6,11 +6,11 @@ class PracticalForm extends Component{
     render(){
         const {companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.props
         return(
-            <div>
-                <div className="practical">
+            <div className="practical">
                 <button
-                onClick={this.props.showHide}>Practical</button>
-                <form className="practical-form"
+                onClick={this.props.showHide}
+                className="sh-butt">Practical</button>
+                <form className="practical-form hidden"
                 onSubmit={this.props.onSub}>
                     <label htmlFor="companyName">Company Name: </label>
                     <input name="companyName"
@@ -42,7 +42,6 @@ class PracticalForm extends Component{
                     </textarea>
                     <button type="submit">Submit</button>
                 </form>
-            </div>
             </div>
         );
     }

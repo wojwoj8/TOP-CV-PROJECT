@@ -1,7 +1,43 @@
-.forms-side, .general, .general-form, .education-form, .education, .practical, .practical-form{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#root{
+    padding: 0 200px;
+}
+.hidden{
+    display: none !important;
 }
 
+.flex-prop{
+    display:flex;
+    width:100%;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center; 
+    // border: 2px solid red;
+
+}
+.forms-side{
+    
+    @extend .flex-prop;
+    padding-top:5vh;
+    border: 2px solid red;
+   
+}
+form{
+    margin:10px 0px;
+}
+
+.sh-butt{
+    width:100%;
+}
+.general{
+    @extend .flex-prop;
+    margin-bottom: 10px;
+}
+.education{
+    @extend .flex-prop;
+    margin-bottom: 10px;
+}
+.practical{
+    @extend .flex-prop;
+    margin-bottom: 10px;
+}
+// , .general, .general-form, .education-form, .education, .practical, .practical-form
