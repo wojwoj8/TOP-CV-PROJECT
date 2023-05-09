@@ -7,7 +7,9 @@ class GeneralForm extends Component{
         return(
             
             <div className="general">
-                <h2>General</h2>
+                {/* <h2>General</h2> */}
+                <button
+                onClick={this.props.showHide}>General</button>
                 <form className="general-form"
                 onSubmit={this.props.onSub}>
                     <label htmlFor="name">Name: </label>

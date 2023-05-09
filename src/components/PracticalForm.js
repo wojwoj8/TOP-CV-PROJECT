@@ -8,7 +8,8 @@ class PracticalForm extends Component{
         return(
             <div>
                 <div className="practical">
-                <h2>Pracical</h2>
+                <button
+                onClick={this.props.showHide}>Practical</button>
                 <form className="practical-form"
                 onSubmit={this.props.onSub}>
                     <label htmlFor="companyName">Company Name: </label>

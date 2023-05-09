@@ -8,7 +8,8 @@ class EducationForm extends Component{
 
         return(
             <div className="education">
-                <h2>Education</h2>
+                <button
+                onClick={this.props.showHide}>Education</button>
                 <form className="education-form"
                 onSubmit={this.props.onSub}>
 
