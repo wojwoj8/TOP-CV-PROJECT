@@ -1,5 +1,6 @@
 import './App.css';
 import './components/Forms.scss';
+import './components/Preview.scss'
 import React, { Component } from 'react';
 import Forms from './components/Forms';
 import Preview from './components/Preview';

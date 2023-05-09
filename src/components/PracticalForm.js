@@ -8,7 +8,7 @@ class PracticalForm extends Component{
         return(
             <div>
                 <div className="practical">
-                <h2>General</h2>
+                <h2>Pracical</h2>
                 <form className="practical-form"
                 onSubmit={this.props.onSub}>
                     <label htmlFor="companyName">Company Name: </label>
