@@ -1,5 +1,8 @@
-html{
-  min-height:100%
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Tilt+Warp&display=swap');
+
+html, body{
+  min-height:100%;
+  font-family: 'Roboto', sans-serif;
 }
 .App{
   display: flex;

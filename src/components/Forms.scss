@@ -40,4 +40,23 @@ form{
     @extend .flex-prop;
     margin-bottom: 10px;
 }
+
+.general-form, .education-form, .practical-form{
+    display:flex;
+    flex-direction: column;
+    width:90%;
+}
+
+textarea{
+    height:200px;
+    resize:none;
+}
+
+// label, input, textarea{
+//     display: flex;
+// }
+button[type="submit"]{
+    margin:inherit;
+}
+
 // , .general, .general-form, .education-form, .education, .practical, .practical-form

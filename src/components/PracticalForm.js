@@ -12,22 +12,23 @@ class PracticalForm extends Component{
                 className="sh-butt">Practical</button>
                 <form className="practical-form hidden"
                 onSubmit={this.props.onSub}>
-                    <label htmlFor="companyName">Company Name: </label>
+                    <label htmlFor="companyName">Company name: </label>
                     <input name="companyName"
                     value={companyName}
                     onChange={this.props.handleChange}
                     ></input>
-                    <label htmlFor="positionTitle">Position Title: </label>
+                    <label htmlFor="positionTitle">Position title: </label>
                     <input name="positionTitle"
                     value={positionTitle}
                     onChange={this.props.handleChange}
                     ></input>
-                    <label htmlFor="startDateP">Start Date: </label>
+                    <label htmlFor="startDateP">Start date: </label>
                     <input name="startDateP"
                     value={startDateP}
                     onChange={this.props.handleChange}
                     type="date"
                     ></input>
+                    <label htmlFor="finishDateP">Finish date: </label>
                     <input name="finishDateP"
                     value={finishDateP}
                     onChange={this.props.handleChange}
