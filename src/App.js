@@ -133,25 +133,27 @@ class App extends Component {
       <Forms 
         handleChange={this.handleChange} 
         general={this.state.general} 
-        education = {this.state.education}
+        educations = {this.state.educations}
         practical = {this.state.practical}
         onSub={this.onSub}
         showHide={this.showHide}
       ></Forms>
       <Preview 
+        educations = {this.state.educations}
         name={name}
         surname={surname}
         email={email}
-        school={school}
-        degree={degree}
-        finishDate={finishDate}
-        startDate={startDate}
+        // school={school}
+        // degree={degree}
+        // finishDate={finishDate}
+        // startDate={startDate}
         companyName={companyName}
         positionTitle={positionTitle}
         startDateP={startDateP}
         finishDateP={finishDateP}
         mainTasks={mainTasks}
         showHidePrev={this.showHidePrev}
+        practicals = {this.state.practicals}
       ></Preview>
     </div>
   );
