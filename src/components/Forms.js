@@ -11,7 +11,7 @@ class Forms extends Component{
         return(
             <div className="forms-side">
                 <GeneralForm
-                onSub={this.props.onSub}
+                // onSub={this.props.onSub}
                 general={this.props.general}
                 handleChange={this.props.handleChange}
                 showHide={this.props.showHide}
@@ -21,14 +21,16 @@ class Forms extends Component{
                 onSub={this.props.onSub}
                 education={this.props.education}
                 showHide={this.props.showHide}
-                handleChange={this.props.handleChange}>
+                handleChange={this.props.handleChange}
+                >
                     
                 </EducationForm>
                 <PracticalForm
                 onSub={this.props.onSub}
                 practical={this.props.practical}
                 showHide={this.props.showHide}
-                handleChange={this.props.handleChange}>
+                handleChange={this.props.handleChange}
+                >
                 </PracticalForm>
             </div>
         )

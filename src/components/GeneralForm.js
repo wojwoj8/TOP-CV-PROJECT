@@ -11,7 +11,8 @@ class GeneralForm extends Component{
                 onClick={this.props.showHide}
                 className="sh-butt">General</button>
                 <form className="general-form"
-                onSubmit={this.props.onSub}>
+                // onSubmit={this.props.handleChange}
+                >
                     <label htmlFor="name">Name: </label>
                     <input name="name"
                     value={name}
@@ -28,7 +29,7 @@ class GeneralForm extends Component{
                     onChange={this.props.handleChange}
                     type="email"
                     ></input>
-                    <button type="submit">Submit</button>
+                    {/* <button type="submit">Submit</button> */}
                 </form>
             </div>
         )

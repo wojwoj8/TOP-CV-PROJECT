@@ -39,17 +39,17 @@ class App extends Component {
   }
 
   handleChange = (e) =>{
-    // let field = e.target.name
-    // let formPart = e.target.parentNode.parentNode.className;
-    // // console.log(field);
-    // // console.log(formPart)
+    let field = e.target.name
+    let formPart = e.target.parentNode.parentNode.className;
+    // console.log(field);
+    // console.log(formPart)
    
-    // this.setState(prevSate =>({
-    //   [formPart]: {
-    //     ...prevSate[formPart],
-    //     [field]: e.target.value,
-    //   }
-    // }))
+    this.setState(prevSate =>({
+      [formPart]: {
+        ...prevSate[formPart],
+        [field]: e.target.value,
+      }
+    }))
     
   }
   showHide = (e) =>{
@@ -77,18 +77,51 @@ class App extends Component {
       acc[input.name] = input.value;
       return acc;
     }, {});
-    // if (formPart === 'education'){
-    //   formData.id = this.state.education.id;
-    // }
-    // console.log(formData)
+    console.log(formPart)
+    console.log(formData)
 
+    if (formPart === 'education'){
       this.setState(prevSate =>({
+        [formPart]: {
+          ...prevSate[formPart],
+          ...formData
+        },
+        educations: this.state.educations.concat(formData),
+        education: {
+          school: '',
+          degree: '',
+          startDate: '',
+          finishDate: '',
+          id: uniqid(),
+        },
+    }))
+  }
+
+   else if (formPart === 'practical'){
+    this.setState(prevSate =>({
       [formPart]: {
         ...prevSate[formPart],
         ...formData
-      }
+      },
+      practicals: this.state.practicals.concat(formData),
+      practical: {
+        companyName: '',
+        positionTitle: '',
+        startDateP: '',
+        finishDateP: '',
+        mainTasks: '',
+        id: uniqid(),
+      },
+  }))
+}
 
-    }))
+    //   this.setState(prevSate =>({
+    //   [formPart]: {
+    //     ...prevSate[formPart],
+    //     ...formData
+    //   }
+
+    // }))
     
   }
   render(){
