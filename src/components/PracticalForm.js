@@ -14,7 +14,7 @@ class PracticalForm extends Component{
                 onSubmit={this.props.onSub}>
                     <label htmlFor="companyName">Company name: </label>
                     <input name="companyName"
-                    // value={companyName}
+                    value={companyName}
                     onChange={this.props.handleChange}
                     ></input>
                     <label htmlFor="positionTitle">Position title: </label>

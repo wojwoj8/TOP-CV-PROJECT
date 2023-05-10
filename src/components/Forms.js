@@ -19,7 +19,7 @@ class Forms extends Component{
                 </GeneralForm>
                 <EducationForm
                 onSub={this.props.onSub}
-                educations={this.props.educations}
+                education={this.props.education}
                 showHide={this.props.showHide}
                 handleChange={this.props.handleChange}
                 >

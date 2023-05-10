@@ -41,7 +41,7 @@ class App extends Component {
   handleChange = (e) =>{
     let field = e.target.name
     let formPart = e.target.parentNode.parentNode.className;
-    // console.log(field);
+    console.log(e.target.value);
     // console.log(formPart)
    
     this.setState(prevSate =>({
@@ -75,6 +75,7 @@ class App extends Component {
     let formPart = e.target.parentNode.className;
     let formData = [...inputs].reduce((acc, input) => {
       acc[input.name] = input.value;
+      input.value = '';
       return acc;
     }, {});
     
@@ -126,6 +127,7 @@ class App extends Component {
 
     // }))
     
+    
   }
   render(){
     const {name, surname, email} = this.state.general
@@ -136,7 +138,7 @@ class App extends Component {
       <Forms 
         handleChange={this.handleChange} 
         general={this.state.general} 
-        educations = {this.state.educations}
+        education = {this.state.education}
         practical = {this.state.practical}
         onSub={this.onSub}
         showHide={this.showHide}

@@ -12,7 +12,12 @@ class EducationForm extends Component{
                 onClick={this.props.showHide}
                 className="sh-butt">Education</button>
                 <form className="education-form hidden"
-                onSubmit={this.props.onSub}>
+                onSubmit={this.props.onSub}
+                // onSubmit={(e) => {
+                //     e.preventDefault();
+                //     console.log(this.props);
+                // }}
+                >
 
                     <label htmlFor="school">School: </label>
                     <input name="school"
