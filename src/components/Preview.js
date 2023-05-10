@@ -24,7 +24,7 @@ class Preview extends Component{
                 </div>
                 {educations.map((education) => {
                     return(
-                        <div className="preview-education">
+                        <div key={education.id} className="preview-education">
                             <h3>Education</h3>
                             <p>
                                 School: {education.school}
@@ -46,7 +46,7 @@ class Preview extends Component{
                 
                 {practicals.map((practical) => {
                     return(
-                        <div className="preview-practical">
+                        <div key={practical.id} className="preview-practical">
                             <h3>Practical Experience</h3>
                             <p>
                                 Company: {practical.companyName}

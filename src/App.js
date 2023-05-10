@@ -77,14 +77,16 @@ class App extends Component {
       acc[input.name] = input.value;
       return acc;
     }, {});
+    
     console.log(formPart)
     console.log(formData)
 
     if (formPart === 'education'){
+      formData.id = this.state.education.id; 
       this.setState(prevSate =>({
         [formPart]: {
           ...prevSate[formPart],
-          ...formData
+          ...formData,   
         },
         educations: this.state.educations.concat(formData),
         education: {
@@ -98,6 +100,7 @@ class App extends Component {
   }
 
    else if (formPart === 'practical'){
+    formData.id = this.state.practical.id; 
     this.setState(prevSate =>({
       [formPart]: {
         ...prevSate[formPart],
@@ -126,8 +129,8 @@ class App extends Component {
   }
   render(){
     const {name, surname, email} = this.state.general
-    const {school, degree, finishDate, startDate} = this.state.education
-    const {companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.state.practical
+    // const {school, degree, finishDate, startDate} = this.state.education
+    // const {companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.state.practical
   return (
     <div className="App">
       <Forms 
@@ -147,11 +150,11 @@ class App extends Component {
         // degree={degree}
         // finishDate={finishDate}
         // startDate={startDate}
-        companyName={companyName}
-        positionTitle={positionTitle}
-        startDateP={startDateP}
-        finishDateP={finishDateP}
-        mainTasks={mainTasks}
+        // companyName={companyName}
+        // positionTitle={positionTitle}
+        // startDateP={startDateP}
+        // finishDateP={finishDateP}
+        // mainTasks={mainTasks}
         showHidePrev={this.showHidePrev}
         practicals = {this.state.practicals}
       ></Preview>

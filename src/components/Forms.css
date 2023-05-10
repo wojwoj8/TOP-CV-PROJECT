@@ -1,0 +1,58 @@
+#root {
+  padding: 0 200px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.flex-prop, .practical, .education, .general, .forms-side {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forms-side {
+  padding-top: 5vh;
+  border: 2px solid red;
+}
+
+form {
+  margin: 10px 0px;
+}
+
+.sh-butt {
+  width: 100%;
+}
+
+.general {
+  margin-bottom: 10px;
+}
+
+.education {
+  margin-bottom: 10px;
+}
+
+.practical {
+  margin-bottom: 10px;
+}
+
+.general-form, .education-form, .practical-form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+textarea {
+  height: 200px;
+  resize: none;
+}
+
+label {
+  font-weight: bold;
+}
+
+button[type=submit] {
+  margin: inherit;
+}/*# sourceMappingURL=Forms.css.map */
