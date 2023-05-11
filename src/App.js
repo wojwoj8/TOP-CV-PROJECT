@@ -41,7 +41,7 @@ class App extends Component {
   handleChange = (e) =>{
     let field = e.target.name
     let formPart = e.target.parentNode.parentNode.className;
-    console.log(e.target.value);
+    // console.log(e.target.value);
     // console.log(formPart)
    
     this.setState(prevSate =>({
