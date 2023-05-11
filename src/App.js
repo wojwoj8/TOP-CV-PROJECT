@@ -11,6 +11,8 @@ class App extends Component {
   constructor(props){
     super(props);
 
+    // this.editButt = this.editButt.bind(this);
+
     this.state = {
       general: {
         name: '',
@@ -75,12 +77,12 @@ class App extends Component {
     let formPart = e.target.parentNode.className;
     let formData = [...inputs].reduce((acc, input) => {
       acc[input.name] = input.value;
-      input.value = '';
+      // input.value = '';
       return acc;
     }, {});
     
-    console.log(formPart)
-    console.log(formData)
+    // console.log(formPart)
+    // console.log(formData)
 
     if (formPart === 'education'){
       formData.id = this.state.education.id; 
@@ -129,6 +131,27 @@ class App extends Component {
     
     
   }
+
+  editButt = (e, name) =>{
+    // console.log(e);
+    const prev = document.querySelector('.preview-content');
+    const forms = document.querySelector('.forms-side');
+    forms.classList.toggle('hidden');
+    prev.classList.toggle('hidden');
+    const arr = name + 's';
+    console.log(arr);
+    const toRem = this.state[arr].find((elem) => elem.id === e.id)
+    console.log(toRem)
+    // console.log(...e)
+    this.setState(prev =>({
+      [name]: {
+        ...prev[name],
+        ...e,
+      },
+      [arr]: this.state[arr].filter(elem => elem.id !== e.id)
+    }))
+    console.log(this.state.education)
+  }
   render(){
     const {name, surname, email} = this.state.general
     // const {school, degree, finishDate, startDate} = this.state.education
@@ -148,6 +171,7 @@ class App extends Component {
         name={name}
         surname={surname}
         email={email}
+        editButt={this.editButt}
         // school={school}
         // degree={degree}
         // finishDate={finishDate}

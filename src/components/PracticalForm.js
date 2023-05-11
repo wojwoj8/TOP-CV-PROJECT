@@ -1,10 +1,11 @@
 import React, {Component} from "react"
 
 class PracticalForm extends Component{
-
-
+    
+    
     render(){
-        const {companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.props
+        const {companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.props.practical
+
         return(
             <div className="practical">
                 <button

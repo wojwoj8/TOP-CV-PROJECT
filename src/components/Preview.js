@@ -25,6 +25,7 @@ class Preview extends Component{
                 {educations.map((education) => {
                     return(
                         <div key={education.id} className="preview-education">
+                            <button onClick={this.props.editButt.bind(this, education, "education")}>Edit</button>
                             <h3>Education</h3>
                             <p>
                                 School: {education.school}
@@ -47,6 +48,7 @@ class Preview extends Component{
                 {practicals.map((practical) => {
                     return(
                         <div key={practical.id} className="preview-practical">
+                            <button onClick={this.props.editButt.bind(this, practical, "practical")}>Edit</button>
                             <h3>Practical Experience</h3>
                             <p>
                                 Company: {practical.companyName}

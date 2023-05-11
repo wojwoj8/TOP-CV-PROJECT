@@ -4,7 +4,7 @@ class EducationForm extends Component{
 
     render(){
 
-        const {school, startDate, finishDate, degree} = this.props;
+        const {school, startDate, finishDate, degree} = this.props.education;
 
         return(
             <div className="education">
