@@ -1,3 +1,5 @@
+$fontSize: 1.2rem;
+
 .flex-prop{
     display:flex;
     width:100%;
@@ -21,6 +23,7 @@
     background-color: #22c55e;
     width: 250px;
     height:50px;
+    font-size: $fontSize;
 }
 
 .preview-content{

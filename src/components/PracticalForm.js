@@ -10,7 +10,7 @@ class PracticalForm extends Component{
             <div className="practical">
                 <button
                 onClick={this.props.showHide}
-                className="sh-butt">Practical</button>
+                className="sh-butt">Work Experience</button>
                 <form className="practical-form hidden"
                 onSubmit={this.props.onSub}>
                     <label htmlFor="companyName">Company name: </label>
@@ -42,7 +42,7 @@ class PracticalForm extends Component{
                     onChange={this.props.handleChange}
                     >
                     </textarea>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Add Work Experience</button>
                 </form>
             </div>
         );

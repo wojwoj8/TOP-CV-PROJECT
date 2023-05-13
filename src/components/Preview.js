@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import Icon from '@mdi/react';
+import { mdilPencil } from '@mdi/light-js';
 
 class Preview extends Component{
 
@@ -26,11 +28,13 @@ class Preview extends Component{
                     {github}
                     </a>
                 </div>
-                <h3>Education</h3>
+                <h2>Education</h2>
                 {educations.map((education) => {
                     return(
                         <div key={education.id} className="preview-education">
-                            <button onClick={this.props.editButt.bind(this, education, "education")}>Edit</button>
+                            <button onClick={this.props.editButt.bind(this, education, "education")}>
+                            <Icon path={mdilPencil} size={1} />
+                            </button>
                             
                             <p>
                                 School: {education.school}
@@ -49,11 +53,13 @@ class Preview extends Component{
                         
                     
                 })}
-                <h3>Work Experience</h3>
+                <h2>Work Experience</h2>
                 {practicals.map((practical) => {
                     return(
                         <div key={practical.id} className="preview-practical">
-                            <button onClick={this.props.editButt.bind(this, practical, "practical")}>Edit</button>
+                            <button onClick={this.props.editButt.bind(this, practical, "practical")}>
+                            <Icon path={mdilPencil} size={1} spin/>
+                            </button>
                             
                             <p>
                                 Company: {practical.companyName}

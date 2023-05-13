@@ -46,7 +46,7 @@ class EducationForm extends Component{
                     type="date"
                     ></input>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit">Add Education</button>
                 </form>
             </div>
         )

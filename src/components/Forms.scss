@@ -1,4 +1,14 @@
-$padding:0 clamp(30px, calc(25vw - 60px), 25vw);
+$padding:0 clamp(30px, calc(25vw - 80px), 25vw);
+
+$fontSize: 1.2rem;
+$inputFontSize: 1rem;
+
+input{
+    font-size: $inputFontSize;
+    height:20px;
+}
+
+
 #root{
     padding: $padding;
 }
@@ -28,6 +38,8 @@ form{
 
 .sh-butt{
     width:100%;
+    height: 50px;
+    font-size: $fontSize;
 }
 .general{
     @extend .flex-prop;
@@ -51,6 +63,7 @@ form{
 textarea{
     height:200px;
     resize:none;
+    font-size: $inputFontSize;
 }
 label{
     font-weight: bold;
@@ -61,6 +74,9 @@ label{
 // }
 button[type="submit"]{
     margin:inherit;
+    height: 40px;
+    font-size: $inputFontSize;
+    background-color: #c084fc;
 }
 
 // , .general, .general-form, .education-form, .education, .practical, .practical-form
