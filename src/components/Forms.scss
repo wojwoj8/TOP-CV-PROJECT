@@ -1,5 +1,6 @@
+$padding:0 clamp(30px, calc(25vw - 60px), 25vw);
 #root{
-    padding: 0 200px;
+    padding: $padding;
 }
 .hidden{
     display: none !important;
@@ -18,7 +19,7 @@
     
     @extend .flex-prop;
     padding-top:5vh;
-    border: 2px solid red;
+    // border: 2px solid red;
    
 }
 form{

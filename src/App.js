@@ -18,6 +18,7 @@ class App extends Component {
         name: '',
         surname: '',
         email: '',
+        github: '',
       },
       education: {
         school: '',
@@ -62,6 +63,7 @@ class App extends Component {
   showHidePrev = (e) =>{
     const butt = e.target;
     let form = butt.nextElementSibling;
+    // butt.innerHTML = 'show'
     const forms = document.querySelector('.forms-side');
     forms.classList.toggle('hidden');
     form.classList.toggle('hidden');
@@ -139,9 +141,9 @@ class App extends Component {
     forms.classList.toggle('hidden');
     prev.classList.toggle('hidden');
     const arr = name + 's';
-    console.log(arr);
-    const toRem = this.state[arr].find((elem) => elem.id === e.id)
-    console.log(toRem)
+    //console.log(arr);
+   // const toRem = this.state[arr].find((elem) => elem.id === e.id)
+    //console.log(toRem)
     // console.log(...e)
     this.setState(prev =>({
       [name]: {
@@ -150,10 +152,10 @@ class App extends Component {
       },
       [arr]: this.state[arr].filter(elem => elem.id !== e.id)
     }))
-    console.log(this.state.education)
+    //console.log(this.state.education)
   }
   render(){
-    const {name, surname, email} = this.state.general
+    const {name, surname, email, github} = this.state.general
     // const {school, degree, finishDate, startDate} = this.state.education
     // const {companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.state.practical
   return (
@@ -171,6 +173,7 @@ class App extends Component {
         name={name}
         surname={surname}
         email={email}
+        github={github}
         editButt={this.editButt}
         // school={school}
         // degree={degree}

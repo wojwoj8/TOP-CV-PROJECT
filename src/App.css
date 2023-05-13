@@ -3,10 +3,12 @@
 html, body{
   min-height:100%;
   font-family: 'Roboto', sans-serif;
+  min-width: 350px;
 }
 .App{
   display: flex;
   flex-direction: column-reverse;
+  margin-top:40px;
 
 }
 

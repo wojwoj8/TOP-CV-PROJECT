@@ -10,15 +10,24 @@
 .preview{
     
     @extend .flex-prop;
-    background-color: grey;
+    // background-color: grey;
 
     p{
         margin:2px 0;
     } 
 }
 
+.sh-butt-prev{
+    background-color: #22c55e;
+    width: 250px;
+    height:50px;
+}
+
 .preview-content{
     width:90%;
 }
 
+.preview-general{
+    background-color: lightblue;
+}
 // , .preview-general, .preview-education, .preview-practical

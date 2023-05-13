@@ -3,14 +3,14 @@ import React, {Component} from "react";
 class GeneralForm extends Component{
     
     render(){
-        const {name, surname, email} = this.props
+        const {name, surname, email, github} = this.props
         return(
             
             <div className="general">
                 <button
                 onClick={this.props.showHide}
                 className="sh-butt">General</button>
-                <form className="general-form"
+                <form className="general-form hidden"
                 // onSubmit={this.props.handleChange}
                 >
                     <label htmlFor="name">Name: </label>
@@ -29,7 +29,12 @@ class GeneralForm extends Component{
                     onChange={this.props.handleChange}
                     type="email"
                     ></input>
-                    {/* <button type="submit">Submit</button> */}
+                    <label htmlFor="github">Github: </label>
+                    <input name="github"
+                    value={github}
+                    onChange={this.props.handleChange}
+                    type="link"
+                    ></input>
                 </form>
             </div>
         )

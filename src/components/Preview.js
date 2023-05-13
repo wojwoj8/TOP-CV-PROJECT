@@ -4,7 +4,7 @@ class Preview extends Component{
 
     
     render(){
-        const {name, surname, email, educations, 
+        const {name, surname, email, educations, github,
             // school, startDate, finishDate, degree, 
             // companyName, positionTitle, startDateP, finishDateP, mainTasks
         practicals} = this.props
@@ -17,16 +17,21 @@ class Preview extends Component{
                 <div className="preview-general">
                     <h2>
                     {name} {surname}</h2>
-
-                    <p>
-                    Email: {email}
+                    <label htmlFor="email">Email: </label>
+                    <p name="email">
+                    {email}
                     </p>
+                    <label htmlFor="github">Github: </label>
+                    <a name="github" href="{github}">
+                    {github}
+                    </a>
                 </div>
+                <h3>Education</h3>
                 {educations.map((education) => {
                     return(
                         <div key={education.id} className="preview-education">
                             <button onClick={this.props.editButt.bind(this, education, "education")}>Edit</button>
-                            <h3>Education</h3>
+                            
                             <p>
                                 School: {education.school}
                             </p>
@@ -44,12 +49,12 @@ class Preview extends Component{
                         
                     
                 })}
-                
+                <h3>Work Experience</h3>
                 {practicals.map((practical) => {
                     return(
                         <div key={practical.id} className="preview-practical">
                             <button onClick={this.props.editButt.bind(this, practical, "practical")}>Edit</button>
-                            <h3>Practical Experience</h3>
+                            
                             <p>
                                 Company: {practical.companyName}
                             </p>
