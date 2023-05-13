@@ -16,21 +16,67 @@ $fontSize: 1.2rem;
 
     p{
         margin:2px 0;
-    } 
+    }
+    
+}
+.name-prev{
+    font-size: 2rem;
+}
+.email-git{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .git-div{
+        width:50%;
+    }
 }
 
 .sh-butt-prev{
-    background-color: #22c55e;
+    background-color: #0ea5e9;
     width: 250px;
     height:50px;
     font-size: $fontSize;
+
+    &:hover{
+        background-color: #088cc9;
+    }
 }
 
 .preview-content{
+    display:flex;
+    flex-direction: column;
     width:90%;
+    background-color: lightblue;
+    margin-top: 20px;
+    padding: 0 25px;
 }
 
 .preview-general{
     background-color: lightblue;
 }
-// , .preview-general, .preview-education, .preview-practical
+
+.preview-education{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    .dates{
+        justify-content: flex-start;
+    }
+    .degree-school{
+        width: 50%;
+    }
+}
+
+.preview-practical{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .work-right{
+        width: 50%;
+    }
+}
+.editButt{
+    font-weight: bolder;
+}

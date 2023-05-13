@@ -4,7 +4,7 @@ class EducationForm extends Component{
 
     render(){
 
-        const {school, startDate, finishDate, degree} = this.props.education;
+        const {school, startDate, finishDate, degree, city} = this.props.education;
 
         return(
             <div className="education">
@@ -28,6 +28,12 @@ class EducationForm extends Component{
                     <label htmlFor="degree">Degree: </label>
                     <input name="degree"
                     value={degree}
+                    onChange={this.props.handleChange}
+                    ></input>
+
+                    <label htmlFor="city">City: </label>
+                    <input name="city"
+                    value={city}
                     onChange={this.props.handleChange}
                     ></input>
 

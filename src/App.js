@@ -23,6 +23,7 @@ class App extends Component {
       education: {
         school: '',
         degree: '',
+        city: '',
         startDate: '',
         finishDate: '',
         id: uniqid(),
@@ -97,6 +98,7 @@ class App extends Component {
         education: {
           school: '',
           degree: '',
+          city: '',
           startDate: '',
           finishDate: '',
           id: uniqid(),

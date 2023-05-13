@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Icon from '@mdi/react';
-import { mdilPencil } from '@mdi/light-js';
+import { mdiNoteEdit } from '@mdi/js';
+
 
 class Preview extends Component{
 
@@ -14,68 +15,97 @@ class Preview extends Component{
         <div className="preview">
             <button
                 onClick={this.props.showHidePrev}
-                className="sh-butt-prev">Preview</button>
+                className="sh-butt-prev">Preview
+                {/* <Icon path={mdiMenuUp} size={1} /> */}
+                </button>
             <div className="preview-content hidden">
                 <div className="preview-general">
-                    <h2>
+                    <h2 className="name-prev">
                     {name} {surname}</h2>
-                    <label htmlFor="email">Email: </label>
-                    <p name="email">
-                    {email}
-                    </p>
-                    <label htmlFor="github">Github: </label>
-                    <a name="github" href="{github}">
-                    {github}
-                    </a>
+                    <div className="email-git">
+                        <div>
+                            <label htmlFor="email">Email: </label>
+                            <span name="email">
+                            {email}
+                            </span>
+                        </div>
+                        <div className="git-div">
+                            <label htmlFor="github">Github: </label>
+                            <a name="github" href="{github}">
+                            {github}
+                            </a>
+                        </div>
+                    </div>
                 </div>
+                <hr></hr>
                 <h2>Education</h2>
                 {educations.map((education) => {
                     return(
                         <div key={education.id} className="preview-education">
-                            <button onClick={this.props.editButt.bind(this, education, "education")}>
-                            <Icon path={mdilPencil} size={1} />
-                            </button>
                             
-                            <p>
-                                School: {education.school}
-                            </p>
-                            <p>
-                                Degree: {education.degree}
-                            </p>
-                            <p>
-                                Start date: {education.startDate}
-                            </p>
-                            <p>
-                                Finish date: {education.finishDate}
-                            </p>
+                            
+                                <div className="dates">
+                                {education.startDate && (
+                                    <p>
+                                    {education.startDate} - {education.finishDate}
+                                    </p>
+                                )}
+                                    <button className="editButt" onClick={this.props.editButt.bind(this, education, "education")}>
+                                    <Icon path={mdiNoteEdit} size={1} />
+                                    </button>
+                                    
+                                </div>
+                                
+                                                        
+                            <div className="degree-school">
+                                <p>
+                                    {education.degree}
+                                </p>
+                                
+                                <p>
+                                    {education.school}
+                                    {education.school && education.city && ","}
+                                    {education.city}
+                                </p>
+                            </div>
+                            
                         </div>
                     )
                         
                     
                 })}
+                <hr></hr>
                 <h2>Work Experience</h2>
                 {practicals.map((practical) => {
                     return(
                         <div key={practical.id} className="preview-practical">
-                            <button onClick={this.props.editButt.bind(this, practical, "practical")}>
-                            <Icon path={mdilPencil} size={1} spin/>
-                            </button>
                             
-                            <p>
-                                Company: {practical.companyName}
-                            </p>
-                            <p>
-                                Position: {practical.positionTitle}
-                            </p>
-                            <p>
-                                Start date: {practical.startDateP}
-                            </p>
-                            <p>
-                                Finish date: {practical.finishDateP}
-                            </p>
-                            <p>
-                                Main tasks: {practical.mainTasks}
-                            </p>
+                            <div className="dates">
+                                {practical.startDateP && (
+                                    <p>
+                                    {practical.startDateP} - {practical.finishDateP}
+                                    </p>
+                                )}
+                                    <button className="editButt" onClick={this.props.editButt.bind(this, practical, "practical")}>
+                                    <Icon path={mdiNoteEdit} size={1} />
+                                    </button>
+                                    
+                                </div>
+                            
+                            <div className="work-right">
+                            
+                                <p>
+                                    Company: {practical.companyName}
+                                </p>
+                                <p>
+                                    Position: {practical.positionTitle}
+                                </p>
+
+                                <p>
+                                    Main tasks: {practical.mainTasks}
+                                </p>
+
+                            </div>
                         </div>
                     )
                 }
