@@ -2,7 +2,7 @@
   "name": "cv-project",
   "version": "0.1.0",
   "private": true,
-  "homepage":"http://wojwoj8.github.io/top-cv-project",
+  "homepage": "http://wojwoj8.github.io/TOP-CV-PROJECT",
   "dependencies": {
     "@mdi/js": "^7.2.96",
     "@mdi/light-js": "^0.2.63",
@@ -24,7 +24,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-
   },
   "eslintConfig": {
     "extends": [

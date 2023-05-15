@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Tilt+Warp&display=swap');
-
+*{
+  box-sizing:content-box;
+}
 html, body{
   min-height:100%;
   font-family: 'Roboto', sans-serif;
   min-width: 350px;
+  
 }
 .App{
   display: flex;
   flex-direction: column-reverse;
   margin-top:40px;
+ 
+ 
 
 }
 
