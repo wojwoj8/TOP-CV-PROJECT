@@ -2,66 +2,72 @@ import './App.css';
 import './components/Forms.scss';
 import './components/Preview.scss'
 import uniqid from "uniqid";
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Forms from './components/Forms';
 import Preview from './components/Preview';
 
 
-class App extends Component {
-  constructor(props){
-    super(props);
+function App() {
 
-    // this.editButt = this.editButt.bind(this);
+  const [data, setData] = useState({
+    general: {
+            name: '',
+            surname: '',
+            email: '',
+            github: '',
+          },
+  // const [data, setData] = useState({
+  //   state: {
+  //     general: {
+  //       name: '',
+  //       surname: '',
+  //       email: '',
+  //       github: '',
+  //     },
+  //     education: {
+  //       school: '',
+  //       degree: '',
+  //       city: '',
+  //       startDate: '',
+  //       finishDate: '',
+  //       id: uniqid(),
+  //     },
+  //     practical: {
+  //       companyName: '',
+  //       positionTitle: '',
+  //       startDateP: '',
+  //       finishDateP: '',
+  //       mainTasks: '',
+  //       id: uniqid(),
+  //     },
+  //     educations: [],
+  //     practicals: [],
 
-    this.state = {
-      general: {
-        name: '',
-        surname: '',
-        email: '',
-        github: '',
-      },
-      education: {
-        school: '',
-        degree: '',
-        city: '',
-        startDate: '',
-        finishDate: '',
-        id: uniqid(),
-      },
-      practical: {
-        companyName: '',
-        positionTitle: '',
-        startDateP: '',
-        finishDateP: '',
-        mainTasks: '',
-        id: uniqid(),
-      },
-      educations: [],
-      practicals: []
+  //   }
+  })
+ 
 
-    }
-  }
-
-  handleChange = (e) =>{
+  const handleChange = (e) =>{
     let field = e.target.name
     let formPart = e.target.parentNode.parentNode.className;
     // console.log(e.target.value);
     // console.log(formPart)
-   
-    this.setState(prevSate =>({
+  //  console.log(data)
+    setData(prevSate =>({
       [formPart]: {
         ...prevSate[formPart],
         [field]: e.target.value,
+        
       }
     }))
     
   }
-  showHide = (e) =>{
+  const showHide = (e) =>{
     const butt = e.target;
     let form = butt.nextElementSibling;
     form.classList.toggle('hidden');
 }
-  showHidePrev = (e) =>{
+  const showHidePrev = (e) =>{
     const butt = e.target;
     let form = butt.nextElementSibling;
     // butt.innerHTML = 'show'
@@ -70,7 +76,7 @@ class App extends Component {
     form.classList.toggle('hidden');
   }
 
-  onSub = (e) =>{
+  const onSub = (e) =>{
     e.preventDefault();
     // need to make array in order to concat
     const inpu = Array.from(e.target.parentElement.querySelectorAll('input'));
@@ -136,7 +142,7 @@ class App extends Component {
     
   }
 
-  editButt = (e, name) =>{
+  const editButt = (e, name) =>{
     // console.log(e);
     const prev = document.querySelector('.preview-content');
     const forms = document.querySelector('.forms-side');
@@ -156,41 +162,34 @@ class App extends Component {
     }))
     //console.log(this.state.education)
   }
-  render(){
-    const {name, surname, email, github} = this.state.general
+
+    // const {name, surname, email, github} = data.state.general;
     // const {school, degree, finishDate, startDate} = this.state.education
     // const {companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.state.practical
   return (
     <div className="App">
       <Forms 
-        handleChange={this.handleChange} 
-        general={this.state.general} 
-        education = {this.state.education}
-        practical = {this.state.practical}
-        onSub={this.onSub}
-        showHide={this.showHide}
+        handleChange={handleChange} 
+        general={data} 
+        // education = {data}
+        // practical = {data}
+        onSub={onSub}
+        showHide={showHide}
       ></Forms>
-      <Preview 
-        educations = {this.state.educations}
-        name={name}
-        surname={surname}
-        email={email}
-        github={github}
-        editButt={this.editButt}
-        // school={school}
-        // degree={degree}
-        // finishDate={finishDate}
-        // startDate={startDate}
-        // companyName={companyName}
-        // positionTitle={positionTitle}
-        // startDateP={startDateP}
-        // finishDateP={finishDateP}
-        // mainTasks={mainTasks}
-        showHidePrev={this.showHidePrev}
-        practicals = {this.state.practicals}
-      ></Preview>
+      {/* <Preview 
+        educations = {data}
+        name={data}
+        surname={data}
+        email={data}
+        github={data}
+        editButt={editButt}
+
+
+        showHidePrev={showHidePrev}
+        practicals = {data}
+      ></Preview> */}
     </div>
   );
-}
-}
+};
+
 export default App;
