@@ -1,7 +1,8 @@
 import Icon from '@mdi/react';
 import { mdiNoteEdit } from '@mdi/js';
 
-const Preview = (educations, practicals, name, surname, email, github, editButt, showHidePrev) =>{
+const Preview = ({educations, practicals, name, surname, email, github, editButt, 
+    showHidePrev, setPracticals, setEducations, setEducation, setPractical}) =>{
 
     return(
     <div className="preview">
@@ -41,7 +42,7 @@ const Preview = (educations, practicals, name, surname, email, github, editButt,
                             {education.startDate} - {education.finishDate}
                             </p>
                         )}                              
-                            {/* <Icon path={mdiNoteEdit} size={1} onClick={this.props.editButt.bind(this, education, "education")} />                                */}
+                            <Icon path={mdiNoteEdit} size={1} onClick={e => editButt(education, setEducation, setEducations, educations)} />                               
                         </div>
                         
                                                     
@@ -76,7 +77,7 @@ const Preview = (educations, practicals, name, surname, email, github, editButt,
                                     {practical.startDateP} - {practical.finishDateP}
                                     </p>
                                 )}
-                                    {/* <Icon path={mdiNoteEdit} size={1} onClick={this.props.editButt.bind(this, practical, "practical")}/> */}
+                                    <Icon path={mdiNoteEdit} size={1} onClick={e => editButt(practical, setPractical, setPracticals, practicals)}/>
                                 </div>
                             
                             <div className="work-right">

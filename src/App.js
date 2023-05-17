@@ -41,22 +41,8 @@ function App() {
 
   })
 
-  const [educations, setEducations] = useState([{
-    "school": "asd",
-    "degree": "sfd",
-    "city": "",
-    "startDate": "",
-    "finishDate": "",
-    "id": "lhrwutt3"
-  }])
-  const [practicals, setPracticals] = useState([{
-    "companyName": "asd",
-    "positionTitle": "dfs",
-    "startDateP": "",
-    "finishDateP": "",
-    "mainTasks": "",
-    "id": "lhrwutt4"
-  }])
+  const [educations, setEducations] = useState([])
+  const [practicals, setPracticals] = useState([])
 
   
   // setFormPart is variable for setState of different hooks
@@ -130,20 +116,16 @@ function App() {
 }
 
   }
-
-  const editButt = (e, name, setFormPart , setArray) =>{
+// in edit e is formPart
+  const editButt = (e, setFormPart, setArray, array) =>{
 
     const prev = document.querySelector('.preview-content');
     const forms = document.querySelector('.forms-side');
     forms.classList.toggle('hidden');
     prev.classList.toggle('hidden');
-
+    const found = array.find((elem) => elem.id = e.id)
+    setFormPart(found)
     setArray((array) => array.filter(elem => elem.id !== e.id))
-    setFormPart(prev =>({
-      ...prev[name],
-      ...e,
-    }))
-
   }
 
   return (
@@ -168,6 +150,10 @@ function App() {
         github={general.github}
         editButt={editButt}
         showHidePrev={showHidePrev}
+        setEducation = {setEducation}
+        setPractical = {setPractical}
+        setEducations = {setEducations}
+        setPracticals = {setPracticals}
       ></Preview>
     </div>
   );
