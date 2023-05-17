@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import './App.css';
 import './components/Forms.scss';
 import './components/Preview.scss'
@@ -9,7 +10,7 @@ import Preview from './components/Preview';
 
 function App() {
 
-  const [data, setData] = useState({
+  const [general, setGeneral] = useState({
     general: {
             name: '',
             surname: '',
@@ -53,7 +54,10 @@ function App() {
     // console.log(e.target.value);
     // console.log(formPart)
   //  console.log(data)
-    setData(prevSate =>({
+    let finalFormPart = _.capitalize(formPart)
+    finalFormPart = 'set' + formPart 
+    console.log(finalFormPart)
+    finalFormPart(prevSate =>({
       [formPart]: {
         ...prevSate[formPart],
         [field]: e.target.value,
@@ -170,7 +174,7 @@ function App() {
     <div className="App">
       <Forms 
         handleChange={handleChange} 
-        general={data} 
+        general={general} 
         // education = {data}
         // practical = {data}
         onSub={onSub}
