@@ -42,14 +42,28 @@ function App() {
 
   })
 
-  const [educations, setEducations] = useState([])
-  const [practicals, setPracticals] = useState([])
+  const [educations, setEducations] = useState([[{
+    "school": "asd",
+    "degree": "sfd",
+    "city": "",
+    "startDate": "",
+    "finishDate": "",
+    "id": "lhrwutt3"
+  }]])
+  const [practicals, setPracticals] = useState([[{
+    "companyName": "asd",
+    "positionTitle": "dfs",
+    "startDateP": "",
+    "finishDateP": "",
+    "mainTasks": "",
+    "id": "lhrwutt4"
+  }]])
 
   
  
   // setFormPart is variable for setState of different hooks
   const handleChange = (e, setFormPart) =>{
-    
+    // console.log(educations)
     let field = e.target.name
     setFormPart(prevSate => ({
         ...prevSate,
@@ -119,30 +133,21 @@ function App() {
 
   }
 
-  const editButt = (e, name) =>{
+  const editButt = (e, name, setFormPart , setArray) =>{
     // console.log(e);
     const prev = document.querySelector('.preview-content');
     const forms = document.querySelector('.forms-side');
     forms.classList.toggle('hidden');
     prev.classList.toggle('hidden');
-    const arr = name + 's';
-    //console.log(arr);
-   // const toRem = this.state[arr].find((elem) => elem.id === e.id)
-    //console.log(toRem)
-    // console.log(...e)
-    this.setState(prev =>({
-      [name]: {
-        ...prev[name],
-        ...e,
-      },
-      [arr]: this.state[arr].filter(elem => elem.id !== e.id)
+
+    setArray((array) => array.filter(elem => elem.id !== e.id))
+    setFormPart(prev =>({
+      ...prev[name],
+      ...e,
     }))
-    //console.log(this.state.education)
+
   }
 
-    // const {name, surname, email, github} = data.state.general;
-    // const {school, degree, finishDate, startDate} = this.state.education
-    // const {companyName, positionTitle, startDateP, finishDateP, mainTasks} = this.state.practical
   return (
     <div className="App">
       <Forms 
@@ -157,14 +162,14 @@ function App() {
         setGeneral={setGeneral}
       ></Forms>
       {/* <Preview 
-        educations = {data}
-        name={data}
-        surname={data}
-        email={data}
-        github={data}
+        educations = {educations}
+        practicals = {practicals}
+        name={general.name}
+        surname={general.surname}
+        email={general.email}
+        github={general.github}
         editButt={editButt}
         showHidePrev={showHidePrev}
-        practicals = {data}
       ></Preview> */}
     </div>
   );
