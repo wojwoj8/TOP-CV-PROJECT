@@ -3,7 +3,7 @@ import EducationForm from './EducationForm';
 import PracticalForm from "./PracticalForm";
 
 const Forms = ({ handleChange, general, education, 
-    practical, onSub, showHide, setGeneral, setEducation}) => {
+    practical, onSub, showHide, setGeneral, setEducation, setPractical}) => {
 
     return(
         <div className="forms-side">
@@ -23,14 +23,15 @@ const Forms = ({ handleChange, general, education,
             >
                 
             </EducationForm>
-            {/*
+            
             <PracticalForm
             onSub={onSub}
             practical={practical}
             showHide={showHide}
+            setPractical={setPractical}
             handleChange={handleChange}
             >
-            </PracticalForm> */}
+            </PracticalForm>
         </div>
     )
     

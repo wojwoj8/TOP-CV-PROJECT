@@ -7,7 +7,7 @@ const EducationForm = ({education, handleChange, showHide, onSub, setEducation})
                 onClick={showHide}
                 className="sh-butt">Education</button>
                 <form className="education-form hidden"
-                onSubmit={onSub}
+                onSubmit={e => onSub(e, setEducation)}
                 >
 
                     <label htmlFor="school">School: </label>

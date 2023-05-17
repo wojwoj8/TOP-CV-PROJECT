@@ -72,7 +72,7 @@ function App() {
     form.classList.toggle('hidden');
   }
 
-  const onSub = (e) =>{
+  const onSub = (e, setFormPart) =>{
     e.preventDefault();
     // need to make array in order to concat
     const inpu = Array.from(e.target.parentElement.querySelectorAll('input'));
@@ -80,51 +80,41 @@ function App() {
     const inputs = inpu.concat(textareas);
 
     let formPart = e.target.parentNode.className;
+
+    // necesary for passing content object into array
     let formData = [...inputs].reduce((acc, input) => {
       acc[input.name] = input.value;
-      // input.value = '';
       return acc;
     }, {});
-    
-    // console.log(formPart)
-    // console.log(formData)
 
     if (formPart === 'education'){
-      formData.id = this.state.education.id; 
-      this.setState(prevSate =>({
-        [formPart]: {
-          ...prevSate[formPart],
-          ...formData,   
-        },
-        educations: this.state.educations.concat(formData),
-        education: {
-          school: '',
-          degree: '',
-          city: '',
-          startDate: '',
-          finishDate: '',
-          id: uniqid(),
-        },
-    }))
+      formData.id = education.id 
+      setEducations(education => [...education, formData])
+      setFormPart({
+
+        school: '',
+        degree: '',
+        city: '',
+        startDate: '',
+        finishDate: '',
+        id: uniqid(),
+       
+    })
   }
 
    else if (formPart === 'practical'){
-    formData.id = this.state.practical.id; 
-    this.setState(prevSate =>({
-      [formPart]: {
-        ...prevSate[formPart],
-        ...formData
-      },
-      practicals: this.state.practicals.concat(formData),
-      practical: {
-        companyName: '',
-        positionTitle: '',
-        startDateP: '',
-        finishDateP: '',
-        mainTasks: '',
-        id: uniqid(),
-      },
-  }))
+    formData.id = practical.id; 
+    setPracticals(practical => [...practical, formData])
+    setFormPart({
+
+      companyName: '',
+      positionTitle: '',
+      startDateP: '',
+      finishDateP: '',
+      mainTasks: '',
+      id: uniqid(),
+
+  })
 }
 
   }
@@ -160,7 +150,8 @@ function App() {
         general={general} 
         education = {education}
         setEducation = {setEducation}
-        // practical = {data}
+        practical = {practical}
+        setPractical = {setPractical}
         onSub={onSub}
         showHide={showHide}
         setGeneral={setGeneral}
@@ -172,8 +163,6 @@ function App() {
         email={data}
         github={data}
         editButt={editButt}
-
-
         showHidePrev={showHidePrev}
         practicals = {data}
       ></Preview> */}
