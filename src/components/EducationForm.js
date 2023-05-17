@@ -1,54 +1,45 @@
-import React, {Component} from "react";
+const EducationForm = ({education, handleChange, showHide, onSub, setEducation}) =>{
 
-class EducationForm extends Component{
-
-    render(){
-
-        const {school, startDate, finishDate, degree, city} = this.props.education;
 
         return(
             <div className="education">
                 <button
-                onClick={this.props.showHide}
+                onClick={showHide}
                 className="sh-butt">Education</button>
                 <form className="education-form hidden"
-                onSubmit={this.props.onSub}
-                // onSubmit={(e) => {
-                //     e.preventDefault();
-                //     console.log(this.props);
-                // }}
+                onSubmit={onSub}
                 >
 
                     <label htmlFor="school">School: </label>
                     <input name="school"
-                    value={school}
-                    onChange={this.props.handleChange}
+                    value={education.school}
+                    onChange={e => handleChange(e, setEducation)}
                     ></input>
                     
                     <label htmlFor="degree">Degree: </label>
                     <input name="degree"
-                    value={degree}
-                    onChange={this.props.handleChange}
+                    value={education.degree}
+                    onChange={e => handleChange(e, setEducation)}
                     ></input>
 
                     <label htmlFor="city">City: </label>
                     <input name="city"
-                    value={city}
-                    onChange={this.props.handleChange}
+                    value={education.city}
+                    onChange={e => handleChange(e, setEducation)}
                     ></input>
 
                     <label htmlFor="startDate">Start date: </label>
 
                     <input name="startDate"
-                    value={startDate}
+                    value={education.startDate}
                     type="date"
-                    onChange={this.props.handleChange}
+                    onChange={e => handleChange(e, setEducation)}
                     ></input>
 
                     <label htmlFor="finishDate">Finish date: </label>
                     <input name="finishDate"
-                    value={finishDate}
-                    onChange={this.props.handleChange}
+                    value={education.finishDate}
+                    onChange={e => handleChange(e, setEducation)}
                     type="date"
                     ></input>
 
@@ -57,6 +48,5 @@ class EducationForm extends Component{
             </div>
         )
     }
-}
 
 export default EducationForm

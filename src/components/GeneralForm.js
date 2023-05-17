@@ -1,4 +1,4 @@
-const GeneralForm = ({general, handleChange, showHide}) => {
+const GeneralForm = ({general, handleChange, showHide, setGeneral}) => {
     
     return(
         
@@ -7,28 +7,27 @@ const GeneralForm = ({general, handleChange, showHide}) => {
             onClick={showHide}
             className="sh-butt">General</button>
             <form className="general-form hidden"
-            // onSubmit={this.props.handleChange}
             >
                 <label htmlFor="name">Name: </label>
                 <input name="name"
                 value={general.name}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, setGeneral)}
                 ></input>
                 <label htmlFor="surname">Surname: </label>
                 <input name="surname"
                 value={general.surname}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, setGeneral)}
                 ></input>
                 <label htmlFor="email">Email: </label>
                 <input name="email"
                 value={general.email}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, setGeneral)}
                 type="email"
                 ></input>
                 <label htmlFor="github">Github: </label>
                 <input name="github"
                 value={general.github}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, setGeneral)}
                 type="link"
                 ></input>
             </form>

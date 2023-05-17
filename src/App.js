@@ -11,61 +11,53 @@ import Preview from './components/Preview';
 function App() {
 
   const [general, setGeneral] = useState({
-    general: {
-            name: '',
-            surname: '',
-            email: '',
-            github: '',
-          },
-  // const [data, setData] = useState({
-  //   state: {
-  //     general: {
-  //       name: '',
-  //       surname: '',
-  //       email: '',
-  //       github: '',
-  //     },
-  //     education: {
-  //       school: '',
-  //       degree: '',
-  //       city: '',
-  //       startDate: '',
-  //       finishDate: '',
-  //       id: uniqid(),
-  //     },
-  //     practical: {
-  //       companyName: '',
-  //       positionTitle: '',
-  //       startDateP: '',
-  //       finishDateP: '',
-  //       mainTasks: '',
-  //       id: uniqid(),
-  //     },
-  //     educations: [],
-  //     practicals: [],
 
-  //   }
-  })
- 
-
-  const handleChange = (e) =>{
-    let field = e.target.name
-    let formPart = e.target.parentNode.parentNode.className;
-    // console.log(e.target.value);
-    // console.log(formPart)
-  //  console.log(data)
-    let finalFormPart = _.capitalize(formPart)
-    finalFormPart = 'set' + formPart 
-    console.log(finalFormPart)
-    finalFormPart(prevSate =>({
-      [formPart]: {
-        ...prevSate[formPart],
-        [field]: e.target.value,
+    
+          name: '',
+          surname: '',
+          email: '',
+          github: '',
         
-      }
+        })
+
+  const [education, setEducation] = useState({
+
+          school: '',
+          degree: '',
+          city: '',
+          startDate: '',
+          finishDate: '',
+          id: uniqid(),
+
+  })
+
+  const [practical, setPractical] = useState({
+
+      companyName: '',
+      positionTitle: '',
+      startDateP: '',
+      finishDateP: '',
+      mainTasks: '',
+      id: uniqid(),
+
+  })
+
+  const [educations, setEducations] = useState([])
+  const [practicals, setPracticals] = useState([])
+
+  
+ 
+  // setFormPart is variable for setState of different hooks
+  const handleChange = (e, setFormPart) =>{
+    
+    let field = e.target.name
+    setFormPart(prevSate => ({
+        ...prevSate,
+        [field]: e.target.value,
+      
     }))
     
-  }
+  } 
   const showHide = (e) =>{
     const butt = e.target;
     let form = butt.nextElementSibling;
@@ -135,15 +127,6 @@ function App() {
   }))
 }
 
-    //   this.setState(prevSate =>({
-    //   [formPart]: {
-    //     ...prevSate[formPart],
-    //     ...formData
-    //   }
-
-    // }))
-    
-    
   }
 
   const editButt = (e, name) =>{
@@ -175,10 +158,12 @@ function App() {
       <Forms 
         handleChange={handleChange} 
         general={general} 
-        // education = {data}
+        education = {education}
+        setEducation = {setEducation}
         // practical = {data}
         onSub={onSub}
         showHide={showHide}
+        setGeneral={setGeneral}
       ></Forms>
       {/* <Preview 
         educations = {data}
