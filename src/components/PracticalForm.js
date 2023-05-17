@@ -1,7 +1,5 @@
 const PracticalForm = ({practical, handleChange, showHide, onSub, setPractical}) =>{
     
-    
-
     return(
         <div className="practical">
             <button

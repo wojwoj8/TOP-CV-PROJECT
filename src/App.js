@@ -12,7 +12,6 @@ function App() {
 
   const [general, setGeneral] = useState({
 
-    
           name: '',
           surname: '',
           email: '',
@@ -42,28 +41,28 @@ function App() {
 
   })
 
-  const [educations, setEducations] = useState([[{
+  const [educations, setEducations] = useState([{
     "school": "asd",
     "degree": "sfd",
     "city": "",
     "startDate": "",
     "finishDate": "",
     "id": "lhrwutt3"
-  }]])
-  const [practicals, setPracticals] = useState([[{
+  }])
+  const [practicals, setPracticals] = useState([{
     "companyName": "asd",
     "positionTitle": "dfs",
     "startDateP": "",
     "finishDateP": "",
     "mainTasks": "",
     "id": "lhrwutt4"
-  }]])
+  }])
 
   
- 
   // setFormPart is variable for setState of different hooks
+
   const handleChange = (e, setFormPart) =>{
-    // console.log(educations)
+
     let field = e.target.name
     setFormPart(prevSate => ({
         ...prevSate,
@@ -80,7 +79,6 @@ function App() {
   const showHidePrev = (e) =>{
     const butt = e.target;
     let form = butt.nextElementSibling;
-    // butt.innerHTML = 'show'
     const forms = document.querySelector('.forms-side');
     forms.classList.toggle('hidden');
     form.classList.toggle('hidden');
@@ -134,7 +132,7 @@ function App() {
   }
 
   const editButt = (e, name, setFormPart , setArray) =>{
-    // console.log(e);
+
     const prev = document.querySelector('.preview-content');
     const forms = document.querySelector('.forms-side');
     forms.classList.toggle('hidden');
@@ -161,7 +159,7 @@ function App() {
         showHide={showHide}
         setGeneral={setGeneral}
       ></Forms>
-      {/* <Preview 
+      <Preview 
         educations = {educations}
         practicals = {practicals}
         name={general.name}
@@ -170,7 +168,7 @@ function App() {
         github={general.github}
         editButt={editButt}
         showHidePrev={showHidePrev}
-      ></Preview> */}
+      ></Preview>
     </div>
   );
 };
